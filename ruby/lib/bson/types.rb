@@ -1,0 +1,7 @@
+require "bson/types/binary"
+require "bson/types/code"
+require "bson/types/code_with_scope"
+require "bson/types/max_key"
+require "bson/types/min_key"
+require "bson/types/object_id"
+require "bson/types/timestamp"

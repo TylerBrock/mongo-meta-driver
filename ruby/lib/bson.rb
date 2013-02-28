@@ -1,7 +1,10 @@
 # encoding: utf-8
-require "bson/registry"
-require "bson/document"
 require "bson/version"
+require "bson/registry"
+require "bson/element"
+require "bson/document"
+require "bson/types"
+require "bson/ext"
 
 # The core namespace for all BSON related behaviour.
 #

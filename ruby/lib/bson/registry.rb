@@ -41,6 +41,8 @@ module BSON
     # @return [ Class ] The class.
     #
     # @since 2.0.0
+
+    # make this take a block
     def register(byte, type)
       MAPPINGS[byte] = type
     end

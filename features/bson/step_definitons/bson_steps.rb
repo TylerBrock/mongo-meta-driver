@@ -28,7 +28,8 @@ Given /^a (\S+ value(?: .*)?)$/ do |value|
 end
 
 When /^I serialize the value$/ do
-  @bson = @value.to_bson
+  @bson = [@value.bson_type, @value.to_bson]
+  puts @bson
 end
 
 Then /^the BSON element should have the (BSON type \S+)$/ do |type|

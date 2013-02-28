@@ -17,13 +17,13 @@ module BSON
     #
     # @since 2.0.0
     SUBTYPES = {
-      generic: 0.chr,
-      function: 1.chr,
-      old: 2.chr,
-      uuid_old: 3.chr,
-      uuid: 4.chr,
-      md5: 5.chr,
-      user: 128.chr
+      :generic => 0.chr,
+      :function => 1.chr,
+      :old => 2.chr,
+      :uuid_old => 3.chr,
+      :uuid => 4.chr,
+      :md5 => 5.chr,
+      :user => 128.chr
     }.freeze
 
     # The mappings of single byte subtypes to their symbol counterparts.
@@ -31,14 +31,14 @@ module BSON
     # @since 2.0.0
     TYPES = SUBTYPES.invert.freeze
 
-    # @!attribute type
-    #   @return [ Symbol ] The binary type.
-    #   @since 2.0.0
-    #
     # @!attribute data
     #   @return [ Object ] The raw binary data.
     #   @since 2.0.0
-    attr_reader :type, :data
+    #
+    # @!attribute type
+    #   @return [ Symbol ] The binary type.
+    #   @since 2.0.0
+    attr_reader :data, :type
 
     # Get the BSON single byte type for a binary.
     #
@@ -63,9 +63,10 @@ module BSON
     # @param [ Object ] data The raw binary data.
     #
     # @since 2.0.0
-    def initialize(type, data)
-      @type = type
+    def initialize(data="", subtype=:generic)
       @data = data
+      @type = subtype
+      puts "subtype is #{subtype} and type is #{type}"
     end
 
     # Encode the binary type
